@@ -1,0 +1,6 @@
+E:\Proyectos\GamingCity-Ecommerce\CapaEntidad\bin\Debug\CapaEntidad.dll
+E:\Proyectos\GamingCity-Ecommerce\CapaEntidad\bin\Debug\CapaEntidad.pdb
+E:\Proyectos\GamingCity-Ecommerce\CapaEntidad\obj\Debug\CapaEntidad.csproj.AssemblyReference.cache
+E:\Proyectos\GamingCity-Ecommerce\CapaEntidad\obj\Debug\CapaEntidad.csproj.CoreCompileInputs.cache
+E:\Proyectos\GamingCity-Ecommerce\CapaEntidad\obj\Debug\CapaEntidad.dll
+E:\Proyectos\GamingCity-Ecommerce\CapaEntidad\obj\Debug\CapaEntidad.pdb

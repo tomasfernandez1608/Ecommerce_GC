@@ -1,0 +1,93 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Mi aplicación ASP.NET</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+    @Styles.Render("~/Content/css")
+</head>
+<body class="d-flex flex-column min-vh-100 ">
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid px-4 px-lg-5">
+            <a class="navbar-brand" href="@Url.Action("Index","Tienda")"> <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0"><i class="fa-solid fa-gamepad fa-bounce"></i></i></button>Gaming City</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="@Url.Action("Index","Tienda")">Inicio</a></li>
+
+                </ul>
+                <form class="d-flex">
+
+                    @if (Session["Cliente"] == null)
+                    {
+                        <a class="nav-link active" aria-current="page" href="@Url.Action("Index","Acceso")"><i class="fa-solid fa-right-to-bracket fa-fade mr-3" style="color: #005eff;"></i>Iniciar Sesion</a>
+                    }
+                    else
+                    {
+
+                        <a class="btn btn-outline-dark" type="submit" href="@Url.Action("Carrito","Tienda")">
+                            <i class="fas fa-shopping-cart me-1"></i>
+                            Cart
+                            <span class="badge bg-dark text-white ms-1 rounded-pill" id="cantidadCarrito">0</span>
+                        </a>
+                        <ul class="navbar-nav ms-auto me-0 me-md-3 my-2 my-md-0">
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown"><i class="fas fa-user fa-fw"></i></a>
+                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item" href="#!"><b>@User.Identity.Name</b></a></li>
+                                    @*<li><a class="dropdown-item" href="@Url.Action("MisCompras","Tienda")">Mis Compras</a></li>*@
+                                    <li><hr class="dropdown-divider" /></li>
+                                    <li><a class="dropdown-item" href="@Url.Action("CerrarSesion","Acceso")">Cerrar Sesion</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    }
+
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    @RenderBody()
+
+    <footer>
+        <p>&copy; @DateTime.Now.Year - Mi aplicación ASP.NET - Desarrollado por Tomas Fernandez</p>
+    </footer>
+
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+
+    <script>
+    $(document).ready(function () {
+        MostrarItemsCarrito();
+    });
+    function MostrarItemsCarrito() {
+        if ($("#cantidadCarrito").length > 0) {
+            $.ajax({
+                url: '@Url.Action("CantidadEnCarrito", "Tienda")',
+                type: "GET",
+                dataType: "json",
+                contentType: "application/json; charset=utf-8",
+                success: function (data) {
+
+                    console.log(data);
+                    $("#cantidadCarrito").text(data.cantidad)
+                },
+                error: function (error) {
+                    console.log(error);
+                }
+
+            });
+        }
+    }
+
+    </script>
+
+</body>
+</html>

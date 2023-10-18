@@ -1,0 +1,11 @@
+E:\Proyectos\GamingCity-Ecommerce\CapaNegocio\bin\Release\CapaNegocio.dll
+E:\Proyectos\GamingCity-Ecommerce\CapaNegocio\bin\Release\CapaNegocio.pdb
+E:\Proyectos\GamingCity-Ecommerce\CapaNegocio\bin\Release\CapaDatos.dll
+E:\Proyectos\GamingCity-Ecommerce\CapaNegocio\bin\Release\CapaEntidad.dll
+E:\Proyectos\GamingCity-Ecommerce\CapaNegocio\bin\Release\CapaDatos.pdb
+E:\Proyectos\GamingCity-Ecommerce\CapaNegocio\bin\Release\CapaEntidad.pdb
+E:\Proyectos\GamingCity-Ecommerce\CapaNegocio\obj\Release\CapaNegocio.csproj.AssemblyReference.cache
+E:\Proyectos\GamingCity-Ecommerce\CapaNegocio\obj\Release\CapaNegocio.csproj.CoreCompileInputs.cache
+E:\Proyectos\GamingCity-Ecommerce\CapaNegocio\obj\Release\CapaNegocio.csproj.CopyComplete
+E:\Proyectos\GamingCity-Ecommerce\CapaNegocio\obj\Release\CapaNegocio.dll
+E:\Proyectos\GamingCity-Ecommerce\CapaNegocio\obj\Release\CapaNegocio.pdb

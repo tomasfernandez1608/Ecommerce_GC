@@ -1,0 +1,315 @@
+﻿@model CapaEntidad.Producto
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="~/Content/backgroundanimate2.css" rel="stylesheet" />
+<header class="backwrap gradient">
+    <div class="back-shapes">
+        <span class="floating circle" style="top:66.59856996935649%;left:13.020833333333334%;animation-delay:-0.9s;"></span>
+        <span class="floating triangle" style="top:31.46067415730337%;left:33.59375%;animation-delay:-4.8s;"></span>
+        <span class="floating cross" style="top:76.50663942798774%;left:38.020833333333336%;animation-delay:-4s;"></span>
+        <span class="floating square" style="top:21.450459652706844%;left:14.0625%;animation-delay:-2.8s;"></span>
+        <span class="floating square" style="top:58.12053115423902%;left:56.770833333333336%;animation-delay:-2.15s;"></span>
+        <span class="floating square" style="top:8.682328907048008%;left:72.70833333333333%;animation-delay:-1.9s;"></span>
+        <span class="floating cross" style="top:31.3585291113381%;left:58.541666666666664%;animation-delay:-0.65s;"></span>
+        <span class="floating cross" style="top:69.96935648621042%;left:81.45833333333333%;animation-delay:-0.4s;"></span>
+        <span class="floating circle" style="top:15.117466802860061%;left:32.34375%;animation-delay:-4.1s;"></span>
+        <span class="floating circle" style="top:13.074565883554648%;left:45.989583333333336%;animation-delay:-3.65s;"></span>
+        <span class="floating cross" style="top:55.87334014300306%;left:27.135416666666668%;animation-delay:-2.25s;"></span>
+        <span class="floating cross" style="top:49.54034729315628%;left:53.75%;animation-delay:-2s;"></span>
+        <span class="floating cross" style="top:34.62717058222676%;left:49.635416666666664%;animation-delay:-1.55s;"></span>
+        <span class="floating cross" style="top:33.19713993871297%;left:86.14583333333333%;animation-delay:-0.95s;"></span>
+        <span class="floating square" style="top:28.19203268641471%;left:25.208333333333332%;animation-delay:-4.45s;"></span>
+        <span class="floating circle" style="top:39.7344228804903%;left:10.833333333333334%;animation-delay:-3.35s;"></span>
+        <span class="floating triangle" style="top:77.83452502553627%;left:24.427083333333332%;animation-delay:-2.3s;"></span>
+        <span class="floating triangle" style="top:2.860061287027579%;left:47.864583333333336%;animation-delay:-1.75s;"></span>
+        <span class="floating triangle" style="top:71.3993871297242%;left:66.45833333333333%;animation-delay:-1.25s;"></span>
+        <span class="floating triangle" style="top:31.256384065372828%;left:76.92708333333333%;animation-delay:-0.65s;"></span>
+        <span class="floating triangle" style="top:46.47599591419816%;left:38.90625%;animation-delay:-0.35s;"></span>
+        <span class="floating cross" style="top:3.4729315628192032%;left:19.635416666666668%;animation-delay:-4.3s;"></span>
+        <span class="floating cross" style="top:3.575076608784474%;left:6.25%;animation-delay:-4.05s;"></span>
+        <span class="floating cross" style="top:77.3237997957099%;left:4.583333333333333%;animation-delay:-3.75s;"></span>
+        <span class="floating cross" style="top:0.9193054136874361%;left:71.14583333333333%;animation-delay:-3.3s;"></span>
+        <span class="floating square" style="top:23.6976506639428%;left:63.28125%;animation-delay:-2.1s;"></span>
+        <span class="floating square" style="top:81.30745658835546%;left:45.15625%;animation-delay:-1.75s;"></span>
+        <span class="floating square" style="top:60.9805924412666%;left:42.239583333333336%;animation-delay:-1.45s;"></span>
+        <span class="floating square" style="top:29.009193054136876%;left:93.90625%;animation-delay:-1.05s;"></span>
+        <span class="floating square" style="top:52.093973442288046%;left:68.90625%;animation-delay:-0.7s;"></span>
+        <span class="floating square" style="top:81.51174668028601%;left:83.59375%;animation-delay:-0.35s;"></span>
+        <span class="floating square" style="top:11.542390194075587%;left:91.51041666666667%;animation-delay:-0.1s;"></span>
+        <div class="container px-4 px-lg-5 my-5">
+            <div class="text-center text-white">
+                <h1 class="display-4 fw-bolder">      </h1>
+                <p class="lead fw-normal text-white-50 mb-0">Arma tu PC, nunca fue mas facil!</p>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- Section-->
+
+<section class="py-5">
+    <div class="container-fluid px-4 px-lg-5 my-5">
+        <div class="row">
+            <div class="col-sm-3">
+                <div class="row mb-3">
+                    <div class="col-sm-12">
+                        <div class="card">
+                            <div class="card-header backwrap gradient text-white">
+                                Categorias
+                            </div>
+                            <div id="contenedor_categorias" class="card-body">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-sm-12">
+                        <div class="card">
+                            <div class="card-header backwrap gradient text-white">
+                                Marcas
+                            </div>
+                            <div id="contenedor_marcas" class="card-body">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-sm-12">
+                        <div class="d-grid gap-2">
+                            <button id="btnaplicarfiltro" class="btn btn-outline-dark btn-block" type="button">
+                                <i class="fas fa-filter"></i>AplicarFiltros
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-9">
+                <div id="contenedor_producto" class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+</section>
+
+
+@section scripts {
+    <script>
+        $(document).ready(function () {
+            MostrarCategorias();
+            MostrarProducto(0, 0);
+
+        });
+
+        function MostrarMarca() {
+
+            var idcategoriaselect = $("input[name='categoria']:checked").val();
+
+            $.ajax({
+                url: '@Url.Action("ListarMarcaporCategorias", "Tienda")',
+                type: "POST",
+                data: JSON.stringify({ idcategoria: idcategoriaselect }),
+                dataType: "json",
+                contentType: "application/json; charset=utf-8",
+                success: function (response) {
+                    $("#contenedor_marcas").html("");
+                    $("#contenedor_marcas").LoadingOverlay("hide");
+                    console.log(response);
+
+                    $("<div>").addClass("form-check").append(
+                        $("<input>").addClass("form-check-input").attr({ "type": "radio", "name": "marca", "id": "mx", "value": "0", "checked": "checked" }),
+                        $("<label>").addClass("form-check-label").text("Todos").attr({ "for": "mx" })
+                    ).appendTo("#contenedor_marcas");
+
+
+
+                    $.each(response.data, function (i,element) {
+                        $("<div>").addClass("form-check").append(
+                            $("<input>").addClass("form-check-input").attr({ "type": "radio", "name": "marca", "id": "m" + i, "value": element.IdMarca }),
+                            $("<label>").addClass("form-check-label").text(element.Descripcion).attr({ "for": "m" + i })
+                        ).appendTo("#contenedor_marcas");
+                    });
+                },
+                error: function (error) {
+                    console.log(error);
+                },
+                beforeSend: function () {
+                    $("#contenedor_marcas").LoadingOverlay("show");
+                }
+
+            });
+        }
+        function MostrarCategorias() {
+
+            $.ajax({
+                url: '@Url.Action("ListarCategorias", "Tienda")',
+                type: "GET",
+                dataType: "json",
+                contentType: "application/json; charset=utf-8",
+                success: function (response) {
+                    $("#contenedor_categorias").LoadingOverlay("hide");
+                    console.log(response);
+
+                    $("<div>").addClass("form-check").append(
+                        $("<input>").addClass("form-check-input").attr({ "type": "radio", "name": "categoria", "id": "cx", "value": "0", "checked": "checked" }),
+                        $("<label>").addClass("form-check-label").text("Todos").attr({ "for": "cx" })
+                    ).appendTo("#contenedor_categorias");
+
+
+
+                    $.each(response.data, function (i,element) {
+                        $("<div>").addClass("form-check").append(
+                            $("<input>").addClass("form-check-input").attr({ "type": "radio", "name": "categoria", "id": "c" + i, "value": element.IdCategoria }),
+                            $("<label>").addClass("form-check-label").text(element.Descripcion).attr({ "for": "c" + i })
+                        ).appendTo("#contenedor_categorias");
+                    });
+                    MostrarMarca();
+                },
+                error: function (error) {
+                    console.log(error);
+                },
+                beforeSend: function () {
+                    $("#contenedor_categorias").LoadingOverlay("show");
+                }
+
+            });
+        }
+
+        $(document).on("change","input[name=categoria]", function () {
+            MostrarMarca();
+        });
+
+        function MostrarProducto(idcategoriaselect,idmarcarelect) {
+
+
+            $.ajax({
+                url: '@Url.Action("ListarProducto", "Tienda")',
+                type: "POST",
+                data: JSON.stringify({ idcategoria: idcategoriaselect, idmarca: idmarcarelect }),
+                dataType: "json",
+                contentType: "application/json; charset=utf-8",
+                success: function (response) {
+                    $("#contenedor_producto").html("");
+                    $("#contenedor_producto").LoadingOverlay("hide");
+                    console.log(response);
+                    /*
+                        <div class="col mb-5">
+                            <div class="card h-100">
+                                <!-- Product image-->
+                                <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
+                                <!-- Product details-->
+                                <div class="card-body p-4">
+                                    <div class="text-center">
+                                        <!-- Product name-->
+                                        <h5 class="fw-bolder">Fancy Product</h5>
+                                        <!-- Product price-->
+                                        $40.00 - $80.00
+                                    </div>
+                                </div>
+                                <!-- Product actions-->
+                                <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                    <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">View options</a></div>
+                                </div>
+                            </div>
+                        </div>
+
+                    */
+
+                    $.each(response.data, function (i, element) {
+                        $("<div>").addClass("col mb-5").append(
+                            $("<div>").addClass("card h-100 d-flex justify-content-center align-items-center").append(
+                                $("<div>").addClass("m-2 p-2 d-flex justify-content-center align-items-center").append(
+                                    $("<div>").addClass("card-image-max-height").append(
+                                        $("<img>").addClass("card-img-top card-image-max-height").attr({ "src": element.RutaImagen }).css({ width: "100%", height:"100%" ,}),
+                                    ),
+                                ).css({ width: "200", height: "200"}),
+                                $("<div>").addClass("card-body p-4").append(
+                                    $("<div>").addClass("text-center").append(
+                                        $("<h5>").addClass("fw-bolder").text(element.Nombre),
+                                        "$" + element.Precio.toFixed(2)
+                                    )
+                                ),
+                                $("<div>").addClass("card-footer p-2 pt-0 border-top-0 bg-transparent").append(
+                                    $("<div>").addClass("d-grid gap-2").append(
+                                        @if (Session["Cliente"] != null)
+                                        {
+                                            @:$("<button>").addClass("btn btn-success mt-auto agregarcarrito").data("idproducto", element.IdProducto).text("Agregar a Carrito"),
+                                        }
+                                        $("<a>").addClass("btn btn-dark mt-auto").attr({ "href": "@Url.Action("DetalleProducto","Tienda")" + "?idproducto=" + element.IdProducto }).text("Ver Detalles")
+                                    )
+                                )
+                            )
+                        ).appendTo("#contenedor_producto")
+                    });
+                },
+                error: function (error) {
+                    console.log(error);
+                },
+                beforeSend: function () {
+                    $("#contenedor_producto").LoadingOverlay("show");
+                }
+
+            });
+        }
+        $("#btnaplicarfiltro").click(function () {
+            var idcategoriaselect = $("input[name='categoria']:checked").val();
+            var idmarcaselect = $("input[name='marca']:checked").val();
+            MostrarProducto(idcategoriaselect, idmarcaselect)
+        })
+
+
+        $(document).on("click", "button.agregarcarrito", function () {
+            console.log($(this).data("idproducto"));
+
+            $.ajax({
+                url: '@Url.Action("AgregarCarrito", "Tienda")',
+                type: "POST",
+                data: JSON.stringify({ idproducto: $(this).data("idproducto") }),
+                dataType: "json",
+                contentType: "application/json; charset=utf-8",
+                success: function (data) {
+
+                    console.log(data);
+                    if (data.respuesta) {
+                        MostrarItemsCarrito();
+                        swal({
+                            title: "Agregado al carrito",
+                            text: "¿ Desear ver el carrito ?",
+                            type: "success",
+                            showCancelButton: true,
+                            confirmButtonClass: "btn-primary",
+                            confirmButtonText: "Si",
+                            cancelButtonText: "No",
+                            closeOnConfirm: true
+                        }, function (isConfirmed) {
+                            if (isConfirmed) {
+                                // Redirige a la página del carrito si se seleccionó "Sí"
+                                window.location.href = '@Url.Action("Carrito", "Tienda")';
+                            }
+                        })
+                    }
+                    else {
+                        swal("", data.mensaje, "warning");
+                    }
+                },
+                error: function (error) {
+                    console.log(error);
+                }
+
+            });
+
+        })
+
+
+    </script>
+
+
+}
+
+
